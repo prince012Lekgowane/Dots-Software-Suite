@@ -212,12 +212,12 @@
             font-weight: 800;
             margin-bottom: 1.5rem;
             line-height: 1.1;
-            animation: fadeInUp 1s ease-out;
+            animation: fadeInUp 0.8s ease-out;
             letter-spacing: -2px;
         }
 
         .gradient-text {
-            background: linear-gradient(135deg, #4A90E2, #5BA3F5);
+            background: linear-gradient(135deg, #FFFFFF, #8B9DC3);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -230,7 +230,7 @@
             max-width: 650px;
             margin-left: auto;
             margin-right: auto;
-            animation: fadeInUp 1s ease-out 0.2s backwards;
+            animation: fadeInUp 0.8s ease-out 0.15s backwards;
         }
 
         @keyframes fadeInUp {
@@ -244,45 +244,9 @@
             }
         }
 
-        .cta-button {
-            display: inline-block;
-            padding: 1.2rem 3rem;
-            background: var(--gradient-1);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.05rem;
-            transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(74, 144, 226, 0.4);
-            animation: fadeInUp 1s ease-out 0.4s backwards;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(74, 144, 226, 0.6);
-        }
-
         /* Section Styling */
         section {
-            padding: 6rem 5%;
+            padding: 4rem 5%;
             max-width: 1400px;
             margin: 0 auto;
             position: relative;
@@ -291,7 +255,7 @@
 
         h2 {
             font-size: 3.5rem;
-            margin-bottom: 3.5rem;
+            margin-bottom: 2.5rem;
             text-align: center;
             font-weight: 700;
             letter-spacing: -1px;
@@ -317,7 +281,7 @@
             padding: 3rem;
             border-radius: 24px;
             border: 1px solid rgba(74, 144, 226, 0.15);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             backdrop-filter: blur(10px);
             position: relative;
             overflow: hidden;
@@ -332,7 +296,7 @@
             height: 100%;
             background: radial-gradient(circle at top left, rgba(74, 144, 226, 0.1), transparent 60%);
             opacity: 0;
-            transition: opacity 0.4s;
+            transition: opacity 0.3s;
         }
 
         .dots-card:hover::before {
@@ -361,7 +325,7 @@
         /* Mobile App Showcase */
         .app-showcase {
             background: transparent;
-            padding: 8rem 5%;
+            padding: 4rem 5%;
         }
 
         .showcase-container {
@@ -387,7 +351,7 @@
             border-radius: 40px;
             padding: 1.2rem;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             border: 3px solid rgba(74, 144, 226, 0.3);
             position: relative;
             overflow: hidden;
@@ -517,7 +481,7 @@
             padding: 2.5rem;
             border-radius: 20px;
             border-left: 4px solid var(--primary-blue);
-            transition: all 0.4s;
+            transition: all 0.3s;
             position: relative;
             overflow: hidden;
         }
@@ -530,7 +494,7 @@
             width: 4px;
             height: 0;
             background: linear-gradient(180deg, #4A90E2, #5BA3F5);
-            transition: height 0.4s;
+            transition: height 0.3s;
         }
 
         .step:hover::before {
@@ -573,7 +537,7 @@
         /* Admin Panel */
         .admin-panel {
             background: transparent;
-            padding: 8rem 5%;
+            padding: 4rem 5%;
         }
 
         .admin-intro {
@@ -637,7 +601,7 @@
             height: 0;
             background: radial-gradient(circle, rgba(74, 144, 226, 0.2), transparent);
             transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
+            transition: width 0.4s, height 0.4s;
         }
 
         .dashboard-card:hover::before {
@@ -679,6 +643,8 @@
             border: 1px solid rgba(74, 144, 226, 0.15);
             max-width: 900px;
             margin: 0 auto;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .policy-content h3 {
@@ -768,14 +734,35 @@
             font-size: 0.95rem;
         }
 
-        footer a {
-            color: var(--primary-blue);
-            text-decoration: none;
-            transition: color 0.3s;
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
         }
 
-        footer a:hover {
-            color: var(--accent-blue);
+        .footer-icon-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(74, 144, 226, 0.1);
+            border: 2px solid rgba(74, 144, 226, 0.3);
+            border-radius: 12px;
+            color: var(--primary-blue);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1.3rem;
+        }
+
+        .footer-icon-link:hover {
+            background: var(--gradient-1);
+            border-color: var(--primary-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(74, 144, 226, 0.3);
+            color: white;
         }
 
         /* Responsive */
@@ -820,15 +807,31 @@
             }
 
             section {
-                padding: 4rem 5%;
+                padding: 3rem 5%;
             }
 
             .policy-content {
-                padding: 2rem;
+                padding: 2rem 1.5rem;
+            }
+
+            .policy-content h3 {
+                font-size: 1.3rem;
+            }
+
+            .policy-content p, .policy-content ul {
+                font-size: 0.95rem;
             }
 
             .bg-circle {
                 filter: blur(60px);
+            }
+
+            .phone-portrait {
+                max-width: 280px;
+            }
+
+            .dashboard-card {
+                aspect-ratio: 4/3;
             }
         }
 
@@ -836,13 +839,31 @@
             .showcase-container {
                 grid-template-columns: 1fr;
             }
+
+            .policy-content {
+                padding: 1.5rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .footer-icon-link {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+            }
         }
 
         /* Scroll Animation */
         .animate-on-scroll {
             opacity: 0;
-            transform: translateY(40px);
-            transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .animate-on-scroll.animated {
@@ -853,8 +874,8 @@
         /* Stagger animation for cards */
         .dots-card, .step, .phone-display {
             opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateY(30px);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .animated .dots-card, .animated .step, .animated .phone-display {
@@ -862,11 +883,11 @@
             transform: translateY(0);
         }
 
-        .animated .dots-card:nth-child(1), .animated .step:nth-child(1), .animated .phone-display:nth-child(1) { transition-delay: 0.1s; }
-        .animated .dots-card:nth-child(2), .animated .step:nth-child(2), .animated .phone-display:nth-child(2) { transition-delay: 0.2s; }
-        .animated .dots-card:nth-child(3), .animated .step:nth-child(3), .animated .phone-display:nth-child(3) { transition-delay: 0.3s; }
-        .animated .dots-card:nth-child(4), .animated .step:nth-child(4), .animated .phone-display:nth-child(4) { transition-delay: 0.4s; }
-        .animated .dots-card:nth-child(5), .animated .step:nth-child(5), .animated .phone-display:nth-child(5) { transition-delay: 0.5s; }
+        .animated .dots-card:nth-child(1), .animated .step:nth-child(1), .animated .phone-display:nth-child(1) { transition-delay: 0.05s; }
+        .animated .dots-card:nth-child(2), .animated .step:nth-child(2), .animated .phone-display:nth-child(2) { transition-delay: 0.1s; }
+        .animated .dots-card:nth-child(3), .animated .step:nth-child(3), .animated .phone-display:nth-child(3) { transition-delay: 0.15s; }
+        .animated .dots-card:nth-child(4), .animated .step:nth-child(4), .animated .phone-display:nth-child(4) { transition-delay: 0.2s; }
+        .animated .dots-card:nth-child(5), .animated .step:nth-child(5), .animated .phone-display:nth-child(5) { transition-delay: 0.25s; }
     </style>
 </head>
 <body>
@@ -902,11 +923,10 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>
-                Connect with<br>
+                <span class="gradient-text">Connect with</span><br>
                 <span class="gradient-text">Professional Consultants</span>
             </h1>
             <p>Bridging the gap between clients and expert consultants. Schedule appointments, communicate securely, and manage professional services all in one powerful platform.</p>
-            <a href="#app" class="cta-button">Explore DOTS</a>
         </div>
     </section>
 
@@ -1238,18 +1258,33 @@
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 DOTS - Professional Business Connection Platform. All rights reserved.</p>
-        <p style="margin-top: 1rem;">Developed by <a href="https://batau.vercel.app/" target="_blank" rel="noopener">Batau Software Development</a></p>
-        <p style="margin-top: 0.5rem;">More apps: <a href="https://batau.vercel.app/" target="_blank" rel="noopener">batau.vercel.app</a> | GitHub: <a href="https://github.com/prince012Lekgowane" target="_blank" rel="noopener">prince012Lekgowane</a></p>
+        <p style="margin-top: 1rem;">Developed by Batau Software Development</p>
+        <div class="footer-links">
+            <a href="https://batau.vercel.app/" target="_blank" rel="noopener" class="footer-icon-link" title="More Apps">
+                <span>🚀</span>
+            </a>
+            <a href="https://github.com/prince012Lekgowane" target="_blank" rel="noopener" class="footer-icon-link" title="GitHub">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+            </a>
+        </div>
     </footer>
 
     <script>
         // Tab Switching
         function switchTab(tab) {
-            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            const buttons = document.querySelectorAll('.tab-button');
+            const contents = document.querySelectorAll('.tab-content');
+            
+            buttons.forEach(btn => btn.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
             
             event.target.classList.add('active');
-            document.getElementById(tab + '-tab').classList.add('active');
+            const targetTab = document.getElementById(tab + '-tab');
+            if (targetTab) {
+                targetTab.classList.add('active');
+            }
         }
 
         // Smooth Scrolling
