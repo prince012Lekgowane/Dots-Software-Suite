@@ -637,15 +637,21 @@
         }
 
         .policy-content {
-            background: var(--card-bg);
-            padding: 3.5rem;
-            border-radius: 24px;
-            border: 1px solid rgba(74, 144, 226, 0.15);
-            max-width: 900px;
-            margin: 0 auto;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-        }
+    background: var(--card-bg);
+    padding: 3.5rem;
+    border-radius: 24px;
+    border: 1px solid rgba(74, 144, 226, 0.15);
+    max-width: 900px;
+    margin: 0 auto;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    overflow-x: hidden; /* Add this */
+}
+
+.policy-content * {
+    max-width: 100%; /* Add this new rule */
+}
 
         .policy-content h3 {
             color: var(--primary-blue);
@@ -1027,34 +1033,34 @@
         </div>
 
         <div id="consultants-tab" class="tab-content">
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Create Profile</h3>
-                    <p>Register as a consultant and build a professional profile showcasing your skills, experience, and qualifications.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Receive Requests</h3>
-                    <p>Get real-time notifications when clients request your services or when jobs matching your skills are posted.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Accept Jobs</h3>
-                    <p>Review request details and communicate with clients before accepting. Manage your schedule efficiently.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Deliver Services</h3>
-                    <p>Engage with clients through secure chat, provide consultations, and build lasting professional relationships.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">5</div>
-                    <h3>Get Paid</h3>
-                    <p>Receive automated payouts after completing appointments. Track all earnings in your financial dashboard.</p>
-                </div>
-            </div>
+    <div class="steps">
+        <div class="step">
+            <div class="step-number">1</div>
+            <h3>Create Professional Profile</h3>
+            <p>Register as a consultant and build a comprehensive profile showcasing your expertise, qualifications, certifications, and portfolio. Add your service areas, pricing, and availability.</p>
         </div>
+        <div class="step">
+            <div class="step-number">2</div>
+            <h3>Set Up Services & Availability</h3>
+            <p>Define your service offerings, set your rates, and establish your working hours. Use the calendar integration to manage your schedule and prevent double bookings.</p>
+        </div>
+        <div class="step">
+            <div class="step-number">3</div>
+            <h3>Receive & Manage Requests</h3>
+            <p>Get instant notifications when clients request your services. Review client details, communicate through secure chat, and accept or decline appointments based on your availability.</p>
+        </div>
+        <div class="step">
+            <div class="step-number">4</div>
+            <h3>Deliver Professional Services</h3>
+            <p>Conduct consultations through in-app video calls, share documents securely, and provide expert guidance. Use the appointment management tools to track all your client engagements.</p>
+        </div>
+        <div class="step">
+            <div class="step-number">5</div>
+            <h3>Get Paid & Grow Your Business</h3>
+            <p>Receive automated payments after completing services. Track your earnings, manage your financial dashboard, and collect client reviews to build your reputation and attract more business.</p>
+        </div>
+    </div>
+</div>
     </section>
 
     <!-- Admin Panel -->
