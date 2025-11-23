@@ -134,24 +134,24 @@
             gap: 0.8rem;
             font-size: 1.8rem;
             font-weight: 700;
-            color: var(--text-primary);
             text-decoration: none;
+            background: linear-gradient(135deg, #FFFFFF, #8B9DC3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .logo-icon {
             width: 40px;
             height: 40px;
-            border-radius: 10px;
-            background: var(--gradient-1);
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
         }
 
         .logo-icon img {
-            width: 28px;
-            height: 28px;
+            width: 40px;
+            height: 40px;
             object-fit: contain;
         }
 
@@ -366,8 +366,8 @@
 
         .showcase-container {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
             margin-top: 4rem;
             max-width: 1200px;
             margin-left: auto;
@@ -376,24 +376,24 @@
 
         .phone-display {
             position: relative;
-            aspect-ratio: 16/10;
             perspective: 1500px;
         }
 
-        .phone-landscape {
+        .phone-portrait {
             width: 100%;
-            height: 100%;
+            max-width: 320px;
+            margin: 0 auto;
             background: linear-gradient(145deg, #1A2332, #0F1621);
-            border-radius: 30px;
-            padding: 1.5rem;
+            border-radius: 40px;
+            padding: 1.2rem;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
             transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 2px solid rgba(74, 144, 226, 0.2);
+            border: 3px solid rgba(74, 144, 226, 0.3);
             position: relative;
             overflow: hidden;
         }
 
-        .phone-landscape::before {
+        .phone-portrait::before {
             content: '';
             position: absolute;
             top: -50%;
@@ -409,14 +409,14 @@
             100% { transform: rotate(360deg); }
         }
 
-        .phone-display:hover .phone-landscape {
-            transform: rotateY(5deg) rotateX(5deg) scale(1.02);
+        .phone-display:hover .phone-portrait {
+            transform: translateY(-15px) scale(1.03);
         }
 
         .screen-content {
             width: 100%;
-            height: 100%;
-            border-radius: 20px;
+            aspect-ratio: 9/19.5;
+            border-radius: 28px;
             overflow: hidden;
             background: #000;
             position: relative;
@@ -781,8 +781,8 @@
         /* Responsive */
         @media (max-width: 1024px) {
             .showcase-container {
-                grid-template-columns: 1fr;
-                gap: 3rem;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2.5rem;
             }
 
             .dashboard-grid {
@@ -811,6 +811,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .showcase-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
             .dashboard-grid {
                 grid-template-columns: 1fr;
             }
@@ -825,6 +829,12 @@
 
             .bg-circle {
                 filter: blur(60px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .showcase-container {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -900,6 +910,45 @@
         </div>
     </section>
 
+    <!-- Mobile App Showcase -->
+    <section id="app" class="app-showcase">
+        <h2>Powerful Features</h2>
+        <div class="showcase-container animate-on-scroll">
+            <div class="phone-display">
+                <div class="phone-portrait">
+                    <div class="screen-content">
+                        <img src="https://play-lh.googleusercontent.com/XcJKD2S8XbSSrRB5L7VYn3LHtPx8h8svNoP2BqboRVP0h0iFwDfi7Xvcb-7ZHVws2Jk=w2560-h1440" alt="DOTS consultant discovery">
+                    </div>
+                </div>
+                <div class="feature-tag">Discover Experts</div>
+            </div>
+            <div class="phone-display">
+                <div class="phone-portrait">
+                    <div class="screen-content">
+                        <img src="https://play-lh.googleusercontent.com/rPe9G4SQPryzucW6AIAQ9Eja-rYGxEi2QlRUafuaLWJMT5j_KCuKc9qDp06K1rhDD4c=w2560-h1440" alt="DOTS appointment booking">
+                    </div>
+                </div>
+                <div class="feature-tag">Book Appointments</div>
+            </div>
+            <div class="phone-display">
+                <div class="phone-portrait">
+                    <div class="screen-content">
+                        <img src="https://play-lh.googleusercontent.com/sLeRMHFbk1TKLgDq1tP0bhoRkjH8RP2tJ7x3KeD1lRXrjn7h7qHRhAm8A4fh4NgnEU4=w2560-h1440" alt="DOTS secure messaging">
+                    </div>
+                </div>
+                <div class="feature-tag">Secure Communication</div>
+            </div>
+            <div class="phone-display">
+                <div class="phone-portrait">
+                    <div class="screen-content">
+                        <img src="https://play-lh.googleusercontent.com/ddRrZVHo1-vlnuMZCmgjyeIjS8c-pdmAiq3sGOvjpmRmRywV4R2Y7HkwBz9bAD96zPk=w2560-h1440" alt="DOTS payment processing">
+                    </div>
+                </div>
+                <div class="feature-tag">Easy Payments</div>
+            </div>
+        </div>
+    </section>
+
     <!-- What is DOTS -->
     <section id="about" class="what-is-dots">
         <h2>What is DOTS?</h2>
@@ -915,45 +964,6 @@
             <div class="dots-card">
                 <h3>Secure Platform</h3>
                 <p>Built with security at its core. End-to-end encrypted communications, secure payment processing through trusted providers, and complete privacy protection for all users.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Mobile App Showcase -->
-    <section id="app" class="app-showcase">
-        <h2>Powerful Features</h2>
-        <div class="showcase-container animate-on-scroll">
-            <div class="phone-display">
-                <div class="phone-landscape">
-                    <div class="screen-content">
-                        <img src="https://play-lh.googleusercontent.com/XcJKD2S8XbSSrRB5L7VYn3LHtPx8h8svNoP2BqboRVP0h0iFwDfi7Xvcb-7ZHVws2Jk=w2560-h1440" alt="DOTS consultant discovery">
-                    </div>
-                </div>
-                <div class="feature-tag">Discover Experts</div>
-            </div>
-            <div class="phone-display">
-                <div class="phone-landscape">
-                    <div class="screen-content">
-                        <img src="https://play-lh.googleusercontent.com/rPe9G4SQPryzucW6AIAQ9Eja-rYGxEi2QlRUafuaLWJMT5j_KCuKc9qDp06K1rhDD4c=w2560-h1440" alt="DOTS appointment booking">
-                    </div>
-                </div>
-                <div class="feature-tag">Book Appointments</div>
-            </div>
-            <div class="phone-display">
-                <div class="phone-landscape">
-                    <div class="screen-content">
-                        <img src="https://play-lh.googleusercontent.com/sLeRMHFbk1TKLgDq1tP0bhoRkjH8RP2tJ7x3KeD1lRXrjn7h7qHRhAm8A4fh4NgnEU4=w2560-h1440" alt="DOTS secure messaging">
-                    </div>
-                </div>
-                <div class="feature-tag">Secure Communication</div>
-            </div>
-            <div class="phone-display">
-                <div class="phone-landscape">
-                    <div class="screen-content">
-                        <img src="https://play-lh.googleusercontent.com/ddRrZVHo1-vlnuMZCmgjyeIjS8c-pdmAiq3sGOvjpmRmRywV4R2Y7HkwBz9bAD96zPk=w2560-h1440" alt="DOTS payment processing">
-                    </div>
-                </div>
-                <div class="feature-tag">Easy Payments</div>
             </div>
         </div>
     </section>
