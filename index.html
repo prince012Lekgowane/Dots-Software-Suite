@@ -579,57 +579,53 @@
         }
 
         .dashboard-card {
-            aspect-ratio: 16/10;
-            background: rgba(10, 14, 31, 0.6);
-            border-radius: 20px;
-            border: 2px dashed rgba(74, 144, 226, 0.3);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.4s;
-            position: relative;
-            overflow: hidden;
-        }
+    aspect-ratio: 16/10;
+    background: rgba(10, 14, 31, 0.6);
+    border-radius: 20px;
+    border: 2px solid rgba(74, 144, 226, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s;
+    position: relative;
+    overflow: hidden;
+}
 
-        .dashboard-card::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: radial-gradient(circle, rgba(74, 144, 226, 0.2), transparent);
-            transform: translate(-50%, -50%);
-            transition: width 0.4s, height 0.4s;
-        }
+.dashboard-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s;
+}
 
-        .dashboard-card:hover::before {
-            width: 400px;
-            height: 400px;
-        }
+.dashboard-card:hover .dashboard-image {
+    transform: scale(1.05);
+}
 
-        .dashboard-card:hover {
-            border-color: rgba(74, 144, 226, 0.6);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(74, 144, 226, 0.2);
-        }
+.dashboard-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, transparent 0%, rgba(10, 14, 31, 0.7) 100%);
+    opacity: 0;
+    transition: opacity 0.4s;
+    z-index: 1;
+}
 
-        .dashboard-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            opacity: 0.6;
-        }
+.dashboard-card:hover::before {
+    opacity: 1;
+}
 
-        .dashboard-label {
-            color: var(--primary-blue);
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-align: center;
-            padding: 0 1rem;
-            position: relative;
-            z-index: 1;
-        }
+.dashboard-card:hover {
+    border-color: rgba(74, 144, 226, 0.6);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(74, 144, 226, 0.3);
+}
 
         /* Privacy Policy */
         .privacy-policy {
@@ -943,7 +939,7 @@
             <div class="phone-display">
                 <div class="phone-portrait">
                     <div class="screen-content">
-                        <img src="https://play-lh.googleusercontent.com/XcJKD2S8XbSSrRB5L7VYn3LHtPx8h8svNoP2BqboRVP0h0iFwDfi7Xvcb-7ZHVws2Jk=w2560-h1440" alt="DOTS consultant discovery">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/flutter-fef59.appspot.com/o/dots%2F88215.jpg?alt=media&token=742afd54-545b-43bd-af51-d3069eebf7a3" alt="DOTS consultant discovery">
                     </div>
                 </div>
                 <div class="feature-tag">Discover Experts</div>
@@ -951,7 +947,7 @@
             <div class="phone-display">
                 <div class="phone-portrait">
                     <div class="screen-content">
-                        <img src="https://play-lh.googleusercontent.com/rPe9G4SQPryzucW6AIAQ9Eja-rYGxEi2QlRUafuaLWJMT5j_KCuKc9qDp06K1rhDD4c=w2560-h1440" alt="DOTS appointment booking">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/flutter-fef59.appspot.com/o/dots%2F88219.jpg?alt=media&token=e17f339b-e238-4ce5-93af-d9634f1f7465" alt="DOTS appointment booking">
                     </div>
                 </div>
                 <div class="feature-tag">Book Appointments</div>
@@ -959,7 +955,7 @@
             <div class="phone-display">
                 <div class="phone-portrait">
                     <div class="screen-content">
-                        <img src="https://play-lh.googleusercontent.com/sLeRMHFbk1TKLgDq1tP0bhoRkjH8RP2tJ7x3KeD1lRXrjn7h7qHRhAm8A4fh4NgnEU4=w2560-h1440" alt="DOTS secure messaging">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/flutter-fef59.appspot.com/o/dots%2F88229.jpg?alt=media&token=0568722f-3a40-4f01-b829-ba030618406b" alt="DOTS secure messaging">
                     </div>
                 </div>
                 <div class="feature-tag">Secure Communication</div>
@@ -967,7 +963,7 @@
             <div class="phone-display">
                 <div class="phone-portrait">
                     <div class="screen-content">
-                        <img src="https://play-lh.googleusercontent.com/ddRrZVHo1-vlnuMZCmgjyeIjS8c-pdmAiq3sGOvjpmRmRywV4R2Y7HkwBz9bAD96zPk=w2560-h1440" alt="DOTS payment processing">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/flutter-fef59.appspot.com/o/dots%2F88223.jpg?alt=media&token=611c766d-7d3e-4313-ae26-53a7268658e0" alt="DOTS payment processing">
                     </div>
                 </div>
                 <div class="feature-tag">Easy Payments</div>
@@ -1064,39 +1060,33 @@
     </section>
 
     <!-- Admin Panel -->
-    <section id="admin" class="admin-panel">
-        <h2>Powerful Admin Dashboard</h2>
-        <p class="admin-intro">Comprehensive web-based control center for managing the entire platform with advanced financial tracking and user management.</p>
-        
-        <div class="admin-dashboard-preview animate-on-scroll">
-            <div class="dashboard-grid">
-                <div class="dashboard-card">
-                    <div class="dashboard-icon">📊</div>
-                    <div class="dashboard-label">Financial Dashboard</div>
-                </div>
-                <div class="dashboard-card">
-                    <div class="dashboard-icon">💳</div>
-                    <div class="dashboard-label">Transaction Management</div>
-                </div>
-                <div class="dashboard-card">
-                    <div class="dashboard-icon">👥</div>
-                    <div class="dashboard-label">User Management</div>
-                </div>
-                <div class="dashboard-card">
-                    <div class="dashboard-icon">📈</div>
-                    <div class="dashboard-label">Analytics & Reporting</div>
-                </div>
-                <div class="dashboard-card">
-                    <div class="dashboard-icon">💬</div>
-                    <div class="dashboard-label">Communication Oversight</div>
-                </div>
-                <div class="dashboard-card">
-                    <div class="dashboard-icon">💰</div>
-                    <div class="dashboard-label">Payment Processing</div>
-                </div>
+<section id="admin" class="admin-panel">
+    <h2>Powerful Admin Dashboard</h2>
+    <p class="admin-intro">Comprehensive web-based control center for managing the entire platform with advanced financial tracking and user management.</p>
+    
+    <div class="admin-dashboard-preview animate-on-scroll">
+        <div class="dashboard-grid">
+            <div class="dashboard-card">
+                <img src="https://firebasestorage.googleapis.com/v0/b/flutter-fef59.appspot.com/o/dots%2FScreenshot_2025-11-23-18-47-07-79_40deb401b9ffe8e1df2f1cc5ba480b12.jpg?alt=media&token=7f1eb0ba-9a9b-408b-88e7-96ee82d36307" alt="Financial Dashboard" class="dashboard-image">
+            </div>
+            <div class="dashboard-card">
+                <img src="https://firebasestorage.googleapis.com/v0/b/flutter-fef59.appspot.com/o/dots%2FScreenshot_2025-11-23-18-50-19-33_40deb401b9ffe8e1df2f1cc5ba480b12.jpg?alt=media&token=52a7b9c0-7529-4a9f-9ab9-c2f302885174" alt="Transaction Management" class="dashboard-image">
+            </div>
+            <div class="dashboard-card">
+                <img src="https://firebasestorage.googleapis.com/v0/b/flutter-fef59.appspot.com/o/dots%2FScreenshot_2025-11-23-18-51-55-63_40deb401b9ffe8e1df2f1cc5ba480b12.jpg?alt=media&token=46713447-562b-45ce-bd5e-77120bf62f4f" alt="User Management" class="dashboard-image">
+            </div>
+            <div class="dashboard-card">
+                <img src="https://firebasestorage.googleapis.com/v0/b/flutter-fef59.appspot.com/o/dots%2FScreenshot_2025-11-23-18-52-48-51_40deb401b9ffe8e1df2f1cc5ba480b12.jpg?alt=media&token=8ef5b9d2-3b35-4fce-bc4f-af7783254dc7" alt="Analytics & Reporting" class="dashboard-image">
+            </div>
+            <div class="dashboard-card">
+                <img src="https://firebasestorage.googleapis.com/v0/b/flutter-fef59.appspot.com/o/dots%2FScreenshot_2025-11-23-18-53-56-80_40deb401b9ffe8e1df2f1cc5ba480b12.jpg?alt=media&token=fa84126a-0ee8-4d4d-8f33-b7390b17ef8f" alt="Communication Oversight" class="dashboard-image">
+            </div>
+            <div class="dashboard-card">
+                <img src="https://firebasestorage.googleapis.com/v0/b/flutter-fef59.appspot.com/o/dots%2FScreenshot_2025-11-23-18-56-03-13_40deb401b9ffe8e1df2f1cc5ba480b12.jpg?alt=media&token=9e9dbbe5-ffee-4d0b-85c2-cf7d93f54a6c" alt="Payment Processing" class="dashboard-image">
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Privacy Policy -->
     <section id="privacy" class="privacy-policy">
