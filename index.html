@@ -633,16 +633,17 @@
         }
 
         .policy-content {
-    background: var(--card-bg);
-    padding: 3.5rem;
-    border-radius: 24px;
-    border: 1px solid rgba(74, 144, 226, 0.15);
-    max-width: 900px;
-    margin: 0 auto;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
-    overflow-x: hidden; /* Add this */
+            background: var(--card-bg);
+            padding: 3.5rem;
+            border-radius: 24px;
+            border: 1px solid rgba(74, 144, 226, 0.15);
+            max-width: 900px;
+            margin: 0 auto;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
+            overflow-x: hidden;
+            overflow-y: auto;
 }
 
 .policy-content * {
@@ -812,17 +813,21 @@
                 padding: 3rem 5%;
             }
 
-            .policy-content {
-                padding: 2rem 1.5rem;
-            }
-
-            .policy-content h3 {
-                font-size: 1.3rem;
-            }
-
-            .policy-content p, .policy-content ul {
-                font-size: 0.95rem;
-            }
+            @media (max-width: 768px) {
+    .policy-content {
+        padding: 2rem 1.5rem;
+        overflow-x: hidden;
+    }
+    
+    .policy-content h3 {
+        font-size: 1.3rem;
+        word-wrap: break-word;
+    }
+    
+    .policy-content p, .policy-content ul {
+        font-size: 0.95rem;
+    }
+}
 
             .bg-circle {
                 filter: blur(60px);
@@ -1270,18 +1275,12 @@
     <script>
         // Tab Switching
         function switchTab(tab) {
-            const buttons = document.querySelectorAll('.tab-button');
-            const contents = document.querySelectorAll('.tab-content');
-            
-            buttons.forEach(btn => btn.classList.remove('active'));
-            contents.forEach(content => content.classList.remove('active'));
-            
+            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+    
             event.target.classList.add('active');
-            const targetTab = document.getElementById(tab + '-tab');
-            if (targetTab) {
-                targetTab.classList.add('active');
-            }
-        }
+            document.getElementById(tab + '-tab').classList.add('active');
+}
 
         // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
