@@ -403,77 +403,21 @@
             letter-spacing: 0.5px;
         }
 
-        /* How to Use */
+        /* How to Use - Single Tab Only */
         .how-to-use {
             background: transparent;
-        }
-
-        .tabs {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 4rem;
-            flex-wrap: wrap;
-        }
-
-        .tab-button {
-            padding: 1rem 2.5rem;
-            background: var(--card-bg);
-            border: 2px solid rgba(74, 144, 226, 0.2);
-            color: var(--text-secondary);
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 1rem;
-            font-weight: 600;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .tab-button::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(74, 144, 226, 0.2);
-            transform: translate(-50%, -50%);
-            transition: width 0.4s, height 0.4s;
-        }
-
-        .tab-button:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-
-        .tab-button:hover, .tab-button.active {
-            background: var(--gradient-1);
-            border-color: var(--primary-blue);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(74, 144, 226, 0.3);
-        }
-
-        .tab-content {
-            display: none;
-            animation: fadeIn 0.6s;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         .steps {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            animation: fadeIn 0.6s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .step {
@@ -579,55 +523,55 @@
         }
 
         .dashboard-card {
-    aspect-ratio: 16/10;
-    background: rgba(10, 14, 31, 0.6);
-    border-radius: 20px;
-    border: 2px solid rgba(74, 144, 226, 0.3);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.4s;
-    position: relative;
-    overflow: hidden;
-}
+            aspect-ratio: 16/10;
+            background: rgba(10, 14, 31, 0.6);
+            border-radius: 20px;
+            border: 2px solid rgba(74, 144, 226, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
 
-.dashboard-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s;
-}
+        .dashboard-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s;
+        }
 
-.dashboard-card:hover .dashboard-image {
-    transform: scale(1.05);
-}
+        .dashboard-card:hover .dashboard-image {
+            transform: scale(1.05);
+        }
 
-.dashboard-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, transparent 0%, rgba(10, 14, 31, 0.7) 100%);
-    opacity: 0;
-    transition: opacity 0.4s;
-    z-index: 1;
-}
+        .dashboard-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, transparent 0%, rgba(10, 14, 31, 0.7) 100%);
+            opacity: 0;
+            transition: opacity 0.4s;
+            z-index: 1;
+        }
 
-.dashboard-card:hover::before {
-    opacity: 1;
-}
+        .dashboard-card:hover::before {
+            opacity: 1;
+        }
 
-.dashboard-card:hover {
-    border-color: rgba(74, 144, 226, 0.6);
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(74, 144, 226, 0.3);
-}
+        .dashboard-card:hover {
+            border-color: rgba(74, 144, 226, 0.6);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(74, 144, 226, 0.3);
+        }
 
-        /* Privacy Policy */
+        /* Privacy Policy - Fixed Visibility */
         .privacy-policy {
             background: transparent;
         }
@@ -639,34 +583,27 @@
             border: 1px solid rgba(74, 144, 226, 0.15);
             max-width: 900px;
             margin: 0 auto;
-            word-wrap: break-word;
-            overflow-wrap: break-word;
-            hyphens: auto;
-            overflow-x: hidden;
-            overflow-y: auto;
-}
-
-.policy-content * {
-    max-width: 100%; /* Add this new rule */
-}
+            line-height: 1.9;
+            overflow: visible !important;
+            max-height: none !important;
+        }
 
         .policy-content h3 {
             color: var(--primary-blue);
-            margin-top: 2.5rem;
-            margin-bottom: 1.2rem;
+            margin: 2.5rem 0 1.2rem;
             font-size: 1.6rem;
             font-weight: 600;
         }
 
         .policy-content p, .policy-content ul {
             color: var(--text-secondary);
-            line-height: 1.9;
             margin-bottom: 1.5rem;
             font-size: 1.05rem;
         }
 
         .policy-content ul {
             padding-left: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .policy-content li {
@@ -770,100 +707,27 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .showcase-container {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2.5rem;
-            }
-
-            .dashboard-grid {
+            .showcase-container, .dashboard-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            h2 {
-                font-size: 2.5rem;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .dots-grid, .steps {
-                grid-template-columns: 1fr;
-            }
-
-            .showcase-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .dashboard-grid {
-                grid-template-columns: 1fr;
-            }
-
-            section {
-                padding: 3rem 5%;
-            }
-
-            @media (max-width: 768px) {
-    .policy-content {
-        padding: 2rem 1.5rem;
-        overflow-x: hidden;
-    }
-    
-    .policy-content h3 {
-        font-size: 1.3rem;
-        word-wrap: break-word;
-    }
-    
-    .policy-content p, .policy-content ul {
-        font-size: 0.95rem;
-    }
-}
-
-            .bg-circle {
-                filter: blur(60px);
-            }
-
-            .phone-portrait {
-                max-width: 280px;
-            }
-
-            .dashboard-card {
-                aspect-ratio: 4/3;
-            }
+            .hero h1 { font-size: 3rem; }
+            .hero p { font-size: 1.1rem; }
+            h2 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+            .dots-grid, .steps { grid-template-columns: 1fr; }
+            .showcase-container, .dashboard-grid { grid-template-columns: 1fr; }
+            section { padding: 3rem 5%; }
+            .policy-content { padding: 2.5rem 2rem; }
         }
 
         @media (max-width: 480px) {
-            .showcase-container {
-                grid-template-columns: 1fr;
-            }
-
-            .policy-content {
-                padding: 1.5rem 1rem;
-            }
-
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-
-            .footer-icon-link {
-                width: 40px;
-                height: 40px;
-                font-size: 1.1rem;
-            }
+            .hero h1 { font-size: 2.5rem; }
+            h2 { font-size: 2.2rem; }
+            .policy-content { padding: 2rem 1.5rem; }
+            .phone-portrait { max-width: 280px; }
         }
 
         /* Scroll Animation */
@@ -877,24 +741,6 @@
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* Stagger animation for cards */
-        .dots-card, .step, .phone-display {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .animated .dots-card, .animated .step, .animated .phone-display {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .animated .dots-card:nth-child(1), .animated .step:nth-child(1), .animated .phone-display:nth-child(1) { transition-delay: 0.05s; }
-        .animated .dots-card:nth-child(2), .animated .step:nth-child(2), .animated .phone-display:nth-child(2) { transition-delay: 0.1s; }
-        .animated .dots-card:nth-child(3), .animated .step:nth-child(3), .animated .phone-display:nth-child(3) { transition-delay: 0.15s; }
-        .animated .dots-card:nth-child(4), .animated .step:nth-child(4), .animated .phone-display:nth-child(4) { transition-delay: 0.2s; }
-        .animated .dots-card:nth-child(5), .animated .step:nth-child(5), .animated .phone-display:nth-child(5) { transition-delay: 0.25s; }
     </style>
 </head>
 <body>
@@ -944,7 +790,7 @@
             <div class="phone-display">
                 <div class="phone-portrait">
                     <div class="screen-content">
-                        <img src="https://firebasestorage.googleapis.com/v0/b/flutter-fef59.appspot.com/o/dots%2F88215.jpg?alt=media&token=742afd54-545b-43bd-af51-d3069eebf7a3" alt="DOTS consultant discovery">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/flutter-fef59.appspot.com/o/dots%2F88215.jpg?alt=media&token=742afd54-545b-43bd-af51-d3069eebf7a3" alt="Discover Experts">
                     </div>
                 </div>
                 <div class="feature-tag">Discover Experts</div>
@@ -952,7 +798,7 @@
             <div class="phone-display">
                 <div class="phone-portrait">
                     <div class="screen-content">
-                        <img src="https://firebasestorage.googleapis.com/v0/b/flutter-fef59.appspot.com/o/dots%2F88219.jpg?alt=media&token=e17f339b-e238-4ce5-93af-d9634f1f7465" alt="DOTS appointment booking">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/flutter-fef59.appspot.com/o/dots%2F88219.jpg?alt=media&token=e17f339b-e238-4ce5-93af-d9634f1f7465" alt="Book Appointments">
                     </div>
                 </div>
                 <div class="feature-tag">Book Appointments</div>
@@ -960,7 +806,7 @@
             <div class="phone-display">
                 <div class="phone-portrait">
                     <div class="screen-content">
-                        <img src="https://firebasestorage.googleapis.com/v0/b/flutter-fef59.appspot.com/o/dots%2F88229.jpg?alt=media&token=0568722f-3a40-4f01-b829-ba030618406b" alt="DOTS secure messaging">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/flutter-fef59.appspot.com/o/dots%2F88229.jpg?alt=media&token=0568722f-3a40-4f01-b829-ba030618406b" alt="Secure Communication">
                     </div>
                 </div>
                 <div class="feature-tag">Secure Communication</div>
@@ -968,7 +814,7 @@
             <div class="phone-display">
                 <div class="phone-portrait">
                     <div class="screen-content">
-                        <img src="https://firebasestorage.googleapis.com/v0/b/flutter-fef59.appspot.com/o/dots%2F88223.jpg?alt=media&token=611c766d-7d3e-4313-ae26-53a7268658e0" alt="DOTS payment processing">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/flutter-fef59.appspot.com/o/dots%2F88223.jpg?alt=media&token=611c766d-7d3e-4313-ae26-53a7268658e0" alt="Easy Payments">
                     </div>
                 </div>
                 <div class="feature-tag">Easy Payments</div>
@@ -982,118 +828,81 @@
         <div class="dots-grid animate-on-scroll">
             <div class="dots-card">
                 <h3>For Clients</h3>
-                <p>Find and connect with expert consultants across various industries. Schedule consultations, communicate securely, and pay seamlessly within the app. Your professional needs, simplified.</p>
+                <p>Find and connect with expert consultants across various industries. Schedule consultations, communicate securely, and pay seamlessly within the app.</p>
             </div>
             <div class="dots-card">
                 <h3>For Consultants</h3>
-                <p>Showcase your expertise, manage appointments, grow your clientele, and track earnings all in one place. Expand your business reach and work flexibly from anywhere.</p>
+                <p>Showcase your expertise, manage appointments, grow your clientele, and track earnings all in one place. Expand your reach and work flexibly.</p>
             </div>
             <div class="dots-card">
                 <h3>Secure Platform</h3>
-                <p>Built with security at its core. End-to-end encrypted communications, secure payment processing through trusted providers, and complete privacy protection for all users.</p>
+                <p>Built with security at its core. End-to-end encrypted communications, secure payments, and complete privacy protection for all users.</p>
             </div>
         </div>
     </section>
 
-    <!-- How to Use -->
+    <!-- How to Use (Clients Only) -->
     <section id="how-to" class="how-to-use">
         <h2>How to Use DOTS</h2>
-        <div class="tabs">
-            <button class="tab-button active" onclick="switchTab('clients')">For Clients</button>
-            <button class="tab-button" onclick="switchTab('consultants')">For Consultants</button>
-        </div>
-
-        <div id="clients-tab" class="tab-content active animate-on-scroll">
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Register & Login</h3>
-                    <p>Create your account using email or Google one-tap registration for quick access to the platform.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Find Consultants</h3>
-                    <p>Search by specialty, industry, or location. Browse profiles, reviews, and qualifications to find the perfect match.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Book & Pay</h3>
-                    <p>Request consultations with clear upfront pricing. Make secure payments through our trusted payment gateway.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Communicate</h3>
-                    <p>Use in-app chat to discuss details, share files, and collaborate with your consultant in a secure environment.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">5</div>
-                    <h3>Manage Appointments</h3>
-                    <p>View your dashboard for all upcoming and past appointments with real-time notifications and updates.</p>
-                </div>
+        <div class="steps animate-on-scroll">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Register & Login</h3>
+                <p>Create your account using email or Google one-tap registration for quick access to the platform.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Find Consultants</h3>
+                <p>Search by specialty, industry, or location. Browse profiles, reviews, and qualifications to find the perfect match.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Book & Pay</h3>
+                <p>Request consultations with clear upfront pricing. Make secure payments through our trusted payment gateway.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Communicate</h3>
+                <p>Use in-app chat to discuss details, share files, and collaborate with your consultant in a secure environment.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">5</div>
+                <h3>Manage Appointments</h3>
+                <p>View your dashboard for all upcoming and past appointments with real-time notifications and updates.</p>
             </div>
         </div>
-
-        <div id="consultants-tab" class="tab-content">
-    <div class="steps">
-        <div class="step">
-            <div class="step-number">1</div>
-            <h3>Create Professional Profile</h3>
-            <p>Register as a consultant and build a comprehensive profile showcasing your expertise, qualifications, certifications, and portfolio. Add your service areas, pricing, and availability.</p>
-        </div>
-        <div class="step">
-            <div class="step-number">2</div>
-            <h3>Set Up Services & Availability</h3>
-            <p>Define your service offerings, set your rates, and establish your working hours. Use the calendar integration to manage your schedule and prevent double bookings.</p>
-        </div>
-        <div class="step">
-            <div class="step-number">3</div>
-            <h3>Receive & Manage Requests</h3>
-            <p>Get instant notifications when clients request your services. Review client details, communicate through secure chat, and accept or decline appointments based on your availability.</p>
-        </div>
-        <div class="step">
-            <div class="step-number">4</div>
-            <h3>Deliver Professional Services</h3>
-            <p>Conduct consultations through in-app video calls, share documents securely, and provide expert guidance. Use the appointment management tools to track all your client engagements.</p>
-        </div>
-        <div class="step">
-            <div class="step-number">5</div>
-            <h3>Get Paid & Grow Your Business</h3>
-            <p>Receive automated payments after completing services. Track your earnings, manage your financial dashboard, and collect client reviews to build your reputation and attract more business.</p>
-        </div>
-    </div>
-</div>
     </section>
 
     <!-- Admin Panel -->
-<section id="admin" class="admin-panel">
-    <h2>Powerful Admin Dashboard</h2>
-    <p class="admin-intro">Comprehensive web-based control center for managing the entire platform with advanced financial tracking and user management.</p>
-    
-    <div class="admin-dashboard-preview animate-on-scroll">
-        <div class="dashboard-grid">
-            <div class="dashboard-card">
-                <img src="https://firebasestorage.googleapis.com/v0/b/flutter-fef59.appspot.com/o/dots%2FScreenshot_2025-11-23-18-47-07-79_40deb401b9ffe8e1df2f1cc5ba480b12.jpg?alt=media&token=7f1eb0ba-9a9b-408b-88e7-96ee82d36307" alt="Financial Dashboard" class="dashboard-image">
-            </div>
-            <div class="dashboard-card">
-                <img src="https://firebasestorage.googleapis.com/v0/b/flutter-fef59.appspot.com/o/dots%2FScreenshot_2025-11-23-18-50-19-33_40deb401b9ffe8e1df2f1cc5ba480b12.jpg?alt=media&token=52a7b9c0-7529-4a9f-9ab9-c2f302885174" alt="Transaction Management" class="dashboard-image">
-            </div>
-            <div class="dashboard-card">
-                <img src="https://firebasestorage.googleapis.com/v0/b/flutter-fef59.appspot.com/o/dots%2FScreenshot_2025-11-23-18-51-55-63_40deb401b9ffe8e1df2f1cc5ba480b12.jpg?alt=media&token=46713447-562b-45ce-bd5e-77120bf62f4f" alt="User Management" class="dashboard-image">
-            </div>
-            <div class="dashboard-card">
-                <img src="https://firebasestorage.googleapis.com/v0/b/flutter-fef59.appspot.com/o/dots%2FScreenshot_2025-11-23-18-52-48-51_40deb401b9ffe8e1df2f1cc5ba480b12.jpg?alt=media&token=8ef5b9d2-3b35-4fce-bc4f-af7783254dc7" alt="Analytics & Reporting" class="dashboard-image">
-            </div>
-            <div class="dashboard-card">
-                <img src="https://firebasestorage.googleapis.com/v0/b/flutter-fef59.appspot.com/o/dots%2FScreenshot_2025-11-23-18-53-56-80_40deb401b9ffe8e1df2f1cc5ba480b12.jpg?alt=media&token=fa84126a-0ee8-4d4d-8f33-b7390b17ef8f" alt="Communication Oversight" class="dashboard-image">
-            </div>
-            <div class="dashboard-card">
-                <img src="https://firebasestorage.googleapis.com/v0/b/flutter-fef59.appspot.com/o/dots%2FScreenshot_2025-11-23-18-56-03-13_40deb401b9ffe8e1df2f1cc5ba480b12.jpg?alt=media&token=9e9dbbe5-ffee-4d0b-85c2-cf7d93f54a6c" alt="Payment Processing" class="dashboard-image">
+    <section id="admin" class="admin-panel">
+        <h2>Powerful Admin Dashboard</h2>
+        <p class="admin-intro">Comprehensive web-based control center for managing the entire platform with advanced financial tracking and user management.</p>
+        
+        <div class="admin-dashboard-preview animate-on-scroll">
+            <div class="dashboard-grid">
+                <div class="dashboard-card">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/flutter-fef59.appspot.com/o/dots%2FScreenshot_2025-11-23-18-47-07-79_40deb401b9ffe8e1df2f1cc5ba480b12.jpg?alt=media&token=7f1eb0ba-9a9b-408b-88e7-96ee82d36307" alt="Financial Dashboard" class="dashboard-image">
+                </div>
+                <div class="dashboard-card">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/flutter-fef59.appspot.com/o/dots%2FScreenshot_2025-11-23-18-50-19-33_40deb401b9ffe8e1df2f1cc5ba480b12.jpg?alt=media&token=52a7b9c0-7529-4a9f-9ab9-c2f302885174" alt="Transaction Management" class="dashboard-image">
+                </div>
+                <div class="dashboard-card">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/flutter-fef59.appspot.com/o/dots%2FScreenshot_2025-11-23-18-51-55-63_40deb401b9ffe8e1df2f1cc5ba480b12.jpg?alt=media&token=46713447-562b-45ce-bd5e-77120bf62f4f" alt="User Management" class="dashboard-image">
+                </div>
+                <div class="dashboard-card">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/flutter-fef59.appspot.com/o/dots%2FScreenshot_2025-11-23-18-52-48-51_40deb401b9ffe8e1df2f1cc5ba480b12.jpg?alt=media&token=8ef5b9d2-3b35-4fce-bc4f-af7783254dc7" alt="Analytics & Reporting" class="dashboard-image">
+                </div>
+                <div class="dashboard-card">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/flutter-fef59.appspot.com/o/dots%2FScreenshot_2025-11-23-18-53-56-80_40deb401b9ffe8e1df2f1cc5ba480b12.jpg?alt=media&token=fa84126a-0ee8-4d4d-8f33-b7390b17ef8f" alt="Communication Oversight" class="dashboard-image">
+                </div>
+                <div class="dashboard-card">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/flutter-fef59.appspot.com/o/dots%2FScreenshot_2025-11-23-18-56-03-13_40deb401b9ffe8e1df2f1cc5ba480b12.jpg?alt=media&token=9e9dbbe5-ffee-4d0b-85c2-cf7d93f54a6c" alt="Payment Processing" class="dashboard-image">
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-    <!-- Privacy Policy -->
+    <!-- Privacy Policy - Now Fully Visible -->
     <section id="privacy" class="privacy-policy">
         <h2>Privacy Policy</h2>
         <div class="policy-content animate-on-scroll">
@@ -1104,7 +913,6 @@
             <p>DOTS ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application and services.</p>
 
             <h3>2. Information We Collect</h3>
-            
             <p><strong>Personal Information:</strong></p>
             <ul>
                 <li><strong>Account Data:</strong> Name, email address, phone number, profile picture</li>
@@ -1114,130 +922,31 @@
 
             <p><strong>Location Data:</strong></p>
             <ul>
-                <li><strong>Foreground Location:</strong> Precise or approximate device location used to find nearby consultants, display services on maps, and enable address autocompletion</li>
-                <li><strong>Background Location:</strong> Used for real-time tracking features such as consultant en-route tracking to appointments</li>
-                <li><strong>Purpose:</strong> Location-based services, consultant matching, navigation, service optimization</li>
+                <li><strong>Foreground Location:</strong> Precise or approximate device location used to find nearby consultants</li>
+                <li><strong>Background Location:</strong> Used for real-time tracking features</li>
+                <li><strong>Purpose:</strong> Location-based services, consultant matching, navigation</li>
             </ul>
 
-            <p><strong>User Content:</strong></p>
-            <ul>
-                <li>Messages, photos, files, and documents shared within the app</li>
-                <li><strong>Purpose:</strong> Facilitate communication between users and deliver content to intended recipients</li>
-            </ul>
-
-            <p><strong>Payment Information:</strong></p>
-            <ul>
-                <li>We do not store credit card details. Payments are processed through secure third-party gateways (Yoco)</li>
-                <li>We store transaction IDs, payment statuses, and transaction history</li>
-                <li><strong>Purpose:</strong> Process payments and maintain transaction records</li>
-            </ul>
-
-            <p><strong>Device Information:</strong></p>
-            <ul>
-                <li>Device model, operating system version, unique device identifiers, IP address</li>
-                <li><strong>Purpose:</strong> App optimization, troubleshooting, security, and fraud prevention</li>
-            </ul>
-
-            <p><strong>Usage and Analytics Data:</strong></p>
-            <ul>
-                <li>App interactions, features used, screens viewed, session duration, click patterns</li>
-                <li><strong>Purpose:</strong> Improve user experience, identify bugs, optimize performance, and develop new features</li>
-            </ul>
+            <p><strong>User Content:</strong> Messages, photos, files, and documents shared within the app</p>
+            <p><strong>Payment Information:</strong> Processed securely via Yoco — we do not store card details</p>
+            <p><strong>Device & Usage Data:</strong> For app optimization, security, and analytics</p>
 
             <h3>3. How We Use Your Information</h3>
-            <p>We use collected information for:</p>
-            <ul>
-                <li>Providing and maintaining our services</li>
-                <li>Processing appointments and payments</li>
-                <li>Facilitating communication between clients and consultants</li>
-                <li>Personalizing user experience</li>
-                <li>Sending notifications about appointments, messages, and updates</li>
-                <li>Improving app functionality and developing new features</li>
-                <li>Ensuring security and preventing fraud</li>
-                <li>Complying with legal obligations</li>
-                <li>Displaying relevant advertisements through Advertising ID</li>
-            </ul>
+            <p>To provide services, process payments, facilitate communication, improve the app, ensure security, and comply with legal requirements.</p>
 
             <h3>4. Permissions Required</h3>
-            <p>Our app requires the following permissions:</p>
-            <ul>
-                <li><strong>Internet:</strong> Network communication, authentication, database access</li>
-                <li><strong>Location (Fine/Coarse/Background):</strong> Find nearby consultants, maps, real-time tracking</li>
-                <li><strong>Camera:</strong> Profile pictures, image sharing, video calls</li>
-                <li><strong>Microphone:</strong> Voice messaging, audio/video calls</li>
-                <li><strong>Storage:</strong> Cache maps, store sent/received files, save media</li>
-                <li><strong>Push Notifications:</strong> Alerts for messages, appointments, updates</li>
-                <li><strong>Vibration:</strong> Haptic feedback for notifications</li>
-                <li><strong>Foreground Services:</strong> File uploads, maintaining call connections</li>
-                <li><strong>Full Screen Intent:</strong> Display incoming call notifications even when device is locked</li>
-                <li><strong>Advertising ID:</strong> Serve personalized advertisements</li>
-            </ul>
+            <p>We request only necessary permissions: Location, Camera, Microphone, Storage, Notifications, Internet.</p>
 
-            <h3>5. Data Sharing and Disclosure</h3>
-            <p>We may share your information with:</p>
-            <ul>
-                <li><strong>Other Users:</strong> Profile information visible to users searching for consultants</li>
-                <li><strong>Service Providers:</strong> Payment processors (Yoco), cloud storage, analytics providers</li>
-                <li><strong>Legal Requirements:</strong> When required by law, court order, or government request</li>
-                <li><strong>Business Transfers:</strong> In case of merger, acquisition, or asset sale</li>
-            </ul>
-            <p>We do not sell your personal information to third parties.</p>
+            <h3>5. Data Sharing</h3>
+            <p>Only with other users (profile visibility), trusted service providers, or when required by law. We do <strong>not sell</strong> your data.</p>
 
-            <h3>6. Data Security</h3>
-            <p>We implement industry-standard security measures including:</p>
-            <ul>
-                <li>Encryption of data in transit and at rest</li>
-                <li>Secure authentication protocols</li>
-                <li>Regular security audits and updates</li>
-                <li>Access controls and monitoring</li>
-            </ul>
-            <p>However, no method of transmission over the Internet is 100% secure. We cannot guarantee absolute security.</p>
+            <h3>6. Data Security & Rights</h3>
+            <p>We use encryption and industry-standard security. You can access, correct, or delete your data at any time.</p>
 
-            <h3>7. Data Retention</h3>
-            <p>We retain your information for as long as necessary to provide services and comply with legal obligations. You may request deletion of your account and associated data at any time.</p>
+            <h3>7. Contact Us</h3>
+            <p>Email: <a href="mailto:support@dotsapp.com" style="color: var(--primary-blue);">support@dotsapp.com</a> | WhatsApp: +27 68 976 2588</p>
 
-            <h3>8. Your Rights</h3>
-            <p>You have the right to:</p>
-            <ul>
-                <li>Access and review your personal information</li>
-                <li>Request correction of inaccurate data</li>
-                <li>Request deletion of your account and data</li>
-                <li>Opt-out of marketing communications</li>
-                <li>Withdraw consent for data processing</li>
-                <li>Object to automated decision-making</li>
-            </ul>
-
-            <h3>9. Children's Privacy</h3>
-            <p>Our services are not intended for users under 18 years of age. We do not knowingly collect personal information from children. If we discover we have collected data from a child, we will delete it immediately.</p>
-
-            <h3>10. Third-Party Services</h3>
-            <p>Our app may contain links to third-party websites or integrate with third-party services. We are not responsible for their privacy practices. Please review their privacy policies.</p>
-
-            <h3>11. International Data Transfers</h3>
-            <p>Your information may be transferred to and maintained on servers located outside your country. We ensure appropriate safeguards are in place for such transfers.</p>
-
-            <h3>12. Changes to This Privacy Policy</h3>
-            <p>We may update this Privacy Policy periodically. We will notify you of significant changes through the app or via email. Your continued use after changes constitutes acceptance.</p>
-
-            <h3>13. Contact Us</h3>
-            <p>For questions, concerns, or requests regarding this Privacy Policy or your data:</p>
-            <ul>
-                <li><strong>Developer:</strong> Batau Software Development</li>
-                <li><strong>Email:</strong> support@dotsapp.com</li>
-                <li><strong>WhatsApp:</strong> +27 68 976 2588</li>
-            </ul>
-
-            <h3>14. Compliance</h3>
-            <p>This Privacy Policy complies with:</p>
-            <ul>
-                <li>Google Play Store policies</li>
-                <li>Apple App Store guidelines</li>
-                <li>GDPR (General Data Protection Regulation)</li>
-                <li>POPIA (Protection of Personal Information Act - South Africa)</li>
-                <li>CCPA (California Consumer Privacy Act)</li>
-            </ul>
-
-            <p style="margin-top: 2rem;"><strong>By using DOTS, you acknowledge that you have read and understood this Privacy Policy and agree to its terms.</strong></p>
+            <p style="margin-top: 3rem; font-size: 1.1rem;"><strong>By using DOTS, you agree to this Privacy Policy.</strong></p>
         </div>
     </section>
 
@@ -1258,12 +967,10 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 DOTS - Professional Business Connection Platform. All rights reserved.</p>
+        <p>© 2025 DOTS - Professional Business Connection Platform. All rights reserved.</p>
         <p style="margin-top: 1rem;">Developed by Batau Software Development</p>
         <div class="footer-links">
-            <a href="https://batau.vercel.app/" target="_blank" rel="noopener" class="footer-icon-link" title="More Apps">
-                <span>🚀</span>
-            </a>
+            <a href="https://batau.vercel.app/" target="_blank" rel="noopener" class="footer-icon-link" title="More Apps">🚀</a>
             <a href="https://github.com/prince012Lekgowane" target="_blank" rel="noopener" class="footer-icon-link" title="GitHub">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
@@ -1273,95 +980,33 @@
     </footer>
 
     <script>
-        // Tab Switching
-        function switchTab(tab) {
-            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-    
-            event.target.classList.add('active');
-            document.getElementById(tab + '-tab').classList.add('active');
-}
-
         // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
 
         // Scroll Animation Observer
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animated');
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1 });
 
-        document.querySelectorAll('.animate-on-scroll').forEach(el => {
-            observer.observe(el);
-        });
+        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 
-        // Parallax Effect on Hero
-        let ticking = false;
+        // Background parallax
         window.addEventListener('scroll', () => {
-            if (!ticking) {
-                window.requestAnimationFrame(() => {
-                    const scrolled = window.pageYOffset;
-                    const circles = document.querySelectorAll('.bg-circle');
-                    circles.forEach((circle, index) => {
-                        const speed = 0.3 + (index * 0.1);
-                        circle.style.transform = `translateY(${scrolled * speed}px)`;
-                    });
-                    ticking = false;
-                });
-                ticking = true;
-            }
-        });
-
-        // Add hover effect to dashboard cards
-        document.querySelectorAll('.dashboard-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-8px) scale(1.02)';
+            const scrolled = window.pageYOffset;
+            document.querySelectorAll('.bg-circle').forEach((circle, i) => {
+                circle.style.transform = `translateY(${scrolled * (0.3 + i * 0.1)}px)`;
             });
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-
-        // Animate numbers on scroll
-        function animateValue(element, start, end, duration) {
-            let startTimestamp = null;
-            const step = (timestamp) => {
-                if (!startTimestamp) startTimestamp = timestamp;
-                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-                element.textContent = Math.floor(progress * (end - start) + start);
-                if (progress < 1) {
-                    window.requestAnimationFrame(step);
-                }
-            };
-            window.requestAnimationFrame(step);
-        }
-
-        // Add loading animation
-        window.addEventListener('load', () => {
-            document.body.style.opacity = '0';
-            setTimeout(() => {
-                document.body.style.transition = 'opacity 0.5s';
-                document.body.style.opacity = '1';
-            }, 100);
         });
     </script>
 </body>
